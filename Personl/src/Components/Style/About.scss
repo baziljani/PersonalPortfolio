@@ -1,0 +1,42 @@
+.about {
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-bar {
+    background: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background: #4caf50;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+    color: white;
+    font-size: 12px;
+    position: relative;
+}
+
+.percentage {
+    position: absolute;
+    right: 5px;
+    font-size: 12px;
+}
