@@ -1,11 +1,35 @@
+/* Navbar.scss or other global styles */
+
+.dark-theme {
+    background-color: #121212;
+    /* Dark background */
+    color: white;
+    /* Light text */
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #141414;
+    /* Ensure a solid background color */
     padding: 1rem 2rem;
     color: white;
+    position: sticky;
+    /* This makes the navbar sticky */
+    top: 0;
+    /* Sticks to the top of the viewport */
+    z-index: 1000;
+    /* Ensures it stays above other content */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition for background and shadow */
 }
+
 
 .nav-links {
     list-style: none;
@@ -14,6 +38,35 @@
 }
 
 .nav-links a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
+    transition: color 0.3s;
+    i {
+            font-size: 20px;
+            color: #31344b;
+            background: #ecf0f3;
+            border-radius: 90%;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px black;
+            cursor: pointer;
+            transition: 0.3s ease;
+    
+            &:hover {
+                box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+            }
+        }
+
+    &:hover {
+        color: #4caf50;
+    }
+}
+
+.active {
+    color: #4caf50; // Highlight active link
+    font-weight: bold;
+    border-bottom: 2px solid #4caf50;
 }

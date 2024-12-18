@@ -1,42 +1,175 @@
 .about {
     padding: 2rem;
     background-color: #f4f4f4;
+
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
 }
 
-.skills {
+.skills__container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    .skills__data {
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: scale(1.02);
+            /* Slight scale-up on hover */
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    .skills__titles {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+
+        .skills__name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skills__percentage-value {
+            font-size: 1rem;
+            color: #555;
+        }
+    }
+
+    .skills__bar {
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+            /* Hover effects for the bar container */
+            background-color: #c2c2c2;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .skills__percentage {
+            display: block;
+            height: 100%;
+            border-radius: 10px;
+            background-color: #4caf50;
+            transition: width 1s ease-in-out;
+            box-shadow: 5px solid skyblue;
+
+            &:hover {
+                /* Hover effects for the progress bar */
+                filter: brightness(1.2);
+                /* Slightly brighten the bar */
+                box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #a3a3d8;
+            }
+        }
+
+        /* Individual Skill Colors */
+        .skills__html {
+            background-color: #e44d26;
+        }
+
+        .skills__css {
+            background-color: #264de4;
+        }
+
+        .skills__js {
+            background-color: #f0db4f;
+        }
+
+        .skills__wordpress {
+            background-color: #21759b;
+        }
+
+        .skills__vue {
+            background-color: #42b883;
+        }
+
+        .skills__android {
+            background-color: #3ddc84;
+        }
+
+        .skills__figma {
+            background-color: #f24e1e;
+        }
+
+        .skills__java {
+            background-color: #b07219;
+        }
+
+        .skills__advanced-java {
+            background-color: #ff6f00;
+        }
+
+        .skills__jdbc {
+            background-color: #00758f;
+        }
+
+        .skills__python {
+            background-color: #3572a5;
+        }
+
+        .skills__powerbi {
+            background-color: #f2c811;
+        }
+
+        .skills__mysql {
+            background-color: #00758f;
+        }
+
+        .skills__excel {
+            background-color: #217346;
+        }
+    }
 }
 
-.skill {
-    display: flex;
-    flex-direction: column;
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .about {
+        padding: 1rem;
+
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    .skills__container {
+        gap: 1rem;
+
+        .skills__bar {
+            height: 8px;
+        }
+
+        .skills__titles .skills__name,
+        .skills__percentage-value {
+            font-size: 0.9rem;
+        }
+    }
 }
 
-.progress-bar {
-    background: #ddd;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
+@media (min-width: 601px) and (max-width: 900px) {
+    .about {
+        padding: 1.5rem;
 
-.progress {
-    height: 100%;
-    background: #4caf50;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 5px;
-    color: white;
-    font-size: 12px;
-    position: relative;
-}
+        .section-title {
+            font-size: 1.75rem;
+        }
+    }
 
-.percentage {
-    position: absolute;
-    right: 5px;
-    font-size: 12px;
+    .skills__container {
+        gap: 1.25rem;
+
+        .skills__bar {
+            height: 9px;
+        }
+    }
 }

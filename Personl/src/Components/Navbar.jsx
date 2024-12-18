@@ -1,17 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Style/Navbar.scss';
 
-const Navbar = () => (
-  <nav className="navbar">
-    <div className="logo">MyLogo</div>
-    <ul className="nav-links">
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/contact">Contact</Link></li>
-      <li><Link to="/profile">Profile</Link></li>
-    </ul>
-  </nav>
-);
+const Navbar = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    setIsDarkTheme(prevTheme => !prevTheme);
+  };
+
+  // Effect to apply dark theme class
+  useEffect(() => {
+    const body = document.querySelector('body'); // Change '.Sass' to 'body'
+    if (isDarkTheme) {
+      body.classList.add('dark-theme');
+    } else {
+      body.classList.remove('dark-theme');
+    }
+  }, [isDarkTheme]);
+
+  return (
+    <nav className="navbar">
+      <div className="logo">Bazil Jani</div>
+      <ul className="nav-links">
+        <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink></li>
+        <li><NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>About</NavLink></li>
+        <li><NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink></li>
+        <li><NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : '')}>Profile</NavLink></li>
+        <i
+          className={`fa-regular ${isDarkTheme ? 'fa-moon' : 'fa-sun'} change-theme`}
+          id="theme-toggle"
+          onClick={toggleTheme}
+        ></i>
+      </ul>
+    </nav>
+  );
+};
 
 export default Navbar;

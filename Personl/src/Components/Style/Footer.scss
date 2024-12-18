@@ -30,14 +30,15 @@
     margin: 15px 0;
 
     i {
-        font-size: 20px;
-        height: 40px;
-        width: 40px;
-        line-height: 40px;
+        font-size: 10px;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
         text-align: center;
         border-radius: 50%;
         background: #ecf0f3;
         transition: 0.3s ease;
+        justify-content: space-between;
 
         &:hover {
             box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
@@ -54,5 +55,65 @@
         &.fa-linkedin {
             color: #0077b5;
         }
+    }
+}
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        /* Center align all content on small screens */
+    }
+
+    .social-icons a {
+        display: block;
+        margin: 10px 0;
+        /* Adjust the margin for stacked icons */
+    }
+}
+
+/* Tablet Devices: Adjust layout to column but keep some spacing */
+@media (min-width: 601px) and (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Larger Devices: (Default behavior, flex row) */
+@media (min-width: 901px) {
+    .footer {
+        flex-direction: row;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        flex: 1;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        gap: 15px;
     }
 }

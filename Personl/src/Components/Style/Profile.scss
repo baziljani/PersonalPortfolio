@@ -1,8 +1,301 @@
+/* Profile.scss */
 .profile {
     padding: 2rem;
-    background-color: #eaeaea;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.profile p {
-    margin: 0.5rem 0;
+.qualification__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.qualification__subtitle {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.letter {
+    display: inline-block;
+    animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* Move up */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Move back to the original position */
+    }
+}
+
+/* Adding a delay for each letter to create a staggered effect */
+.letter:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.letter:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.qualification__active {
+    background-color: #e0f7fa;
+}
+
+
+.qualification__container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.qualification__tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.qualification__button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.qualification__button.active {
+    color: #007bff;
+}
+
+.qualification__data {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateX(10px);
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+.qualification__calendar {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #777;
+}
+
+.qualification__icon {
+    margin-right: 10px;
+}
+
+.qualification__active {
+    background-color: #e0f7fa;
+}
+
+.qualification__rounder {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+    top: 10px;
+    left: -5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.qualification__line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #007bff;
+    left: 50%;
+    top: 0;
+}
+
+.qualification__tabs .qualification__button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.qualification__content {
+    display: none;
+}
+
+.qualification__content.qualification__active {
+    display: block;
+}
+
+/* Water wave effect on text hover */
+.qualification__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.qualification__subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: hidden;
+}
+@keyframes wave {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+// .qualification__subtitle::after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: #007bff;
+//     opacity: 0.2;
+//     transform: scaleX(0);
+//     transform-origin: bottom left;
+//     transition: transform 0.3s ease-out;
+// }
+
+// .qualification__subtitle:hover::after {
+//     transform: scaleX(1);
+// }
+
+// @keyframes waveEffect {
+//     0% {
+//         transform: scale(1);
+//     }
+
+//     50% {
+//         transform: scale(1.05);
+//     }
+
+//     100% {
+//         transform: scale(1);
+//     }
+// }
+.qualification__subtitle:hover {
+    animation: wave 1s ease-out infinite;
+}
+
+/* Styling for the qualification content */
+.qualification__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.qualification__tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.qualification__button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.qualification__button.active {
+    color: #007bff;
+}
+
+.qualification__data {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.qualification__calendar {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #777;
+}
+
+.qualification__icon {
+    margin-right: 10px;
+}
+
+.qualification__active {
+    background-color: #e0f7fa;
+}
+
+.qualification__rounder {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+    top: 10px;
+    left: -5px;
+}
+
+.qualification__line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #007bff;
+    left: 50%;
+    top: 0;
+}
+
+.qualification__tabs .qualification__button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.qualification__content {
+    display: none;
+}
+
+.qualification__content.qualification__active {
+    display: block;
 }
