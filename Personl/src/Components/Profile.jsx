@@ -17,10 +17,10 @@ const Profile = () => {
   return (
     <section id="profile" className="profile">
       <h2>My Profile</h2>
-      <p>Name: Bazil Jani</p>
-      <p>Profession: Full Stack Developer</p>
-      <p>Location: Bengaluru, India</p>
-      <p>Bio: Passionate about building impactful software solutions. Experienced in backend and frontend development.</p>
+      <p className="highlight">Name: Bazil Jani</p>
+      <p className="highlight">Profession: Full Stack Developer</p>
+      <p className="highlight">Location: Bengaluru, India</p>
+      <p className="bio highlight">Bio: Passionate about building impactful software solutions. Experienced in backend and frontend development.</p>
       
       <h2 className="qualification__title">Qualification</h2>
       <span className="qualification__subtitle">My personal journey</span>

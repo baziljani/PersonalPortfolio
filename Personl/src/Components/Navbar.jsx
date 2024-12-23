@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from'./logo.png'
 import './Style/Navbar.scss';
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Bazil Jani</div>
+      <div className="logo"><img src={logo} alt="Bazil Jani Logo" className='logo-image' /></div>
       <ul className="nav-links">
         <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink></li>
         <li><NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>About</NavLink></li>

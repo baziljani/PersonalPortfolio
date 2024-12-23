@@ -13,10 +13,12 @@ const Footer = () => (
         <a href="#"><i className="fa-brands fa-facebook"></i> </a>
         <a href="#"><i className="fa-solid fa-x"></i> </a>
         <a href="#"><i className="fa-brands fa-linkedin"></i> </a>
+        <p>&copy; 2023 Bazil Jani. All rights reserved.</p>
+
       </div>
     </div>
     <div className="footer-right">
-      <p>Business Info: <br /> Your Business Name</p>
+      <p>Business Info: <br /> Freelancing (web developer)</p>
     </div>
   </footer>
 );
